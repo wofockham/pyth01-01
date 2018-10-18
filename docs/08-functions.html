@@ -194,8 +194,8 @@ print_order()</code></pre></div>
 </section>
 <section id="naming-a-function" class="level2">
 <h2>Naming a Function</h2>
-<p>What can you name a function? - Anything you'd like. - But match the <em>callback</em>! - Using <code>print_order</code> is more descriptive.</p>
-<p>What do you think will happen if you change the function name <code>print_order</code> to <code>finishedOrder</code> without updating the callback?</p>
+<p>What can you name a function? - Anything you'd like. - But match the definition to the <em>invocation</em>! - Using <code>print_order</code> is more descriptive.</p>
+<p>What do you think will happen if you change the function name <code>print_order</code> to <code>finishedOrder</code> without updating the invocation?</p>
 <iframe height="400px" width="100%" src="https://repl.it/@SuperTernary/python-programming-functions-planter?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
 </iframe>
 <aside class="notes">
@@ -203,7 +203,7 @@ print_order()</code></pre></div>
 <p><strong>Teaching Tips</strong>:</p>
 <ul>
 <li>Walk through this. It's a demo, not an exercise - to show students it working.</li>
-<li>Change the call back - demo it failing</li>
+<li>Change the invocation - demo it failing</li>
 </ul>
 <p><strong>Repl.it note</strong>: This replit has</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> finished_order():
@@ -234,7 +234,7 @@ welcome()</code></pre></div>
 <h2>We Do: Writing a Function</h2>
 <p>Let's make this a little more complicated.</p>
 <p>Let's write a function together, <code>high_low</code>, that prints &quot;High!&quot; if a variable <code>my_number</code> is greater than 10 and &quot;Low!&quot; if it isn't.</p>
-<iframe height="400px" width="100%" src="https://repl.it/@SuperTernary/Empty-Replit?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
+<!--iframe height="400px" width="100%" src="https://repl.it/@SuperTernary/Empty-Replit?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"-->
 </iframe>
 <aside class="notes">
 <p><strong>Teaching Tips</strong>:</p>
@@ -417,7 +417,7 @@ print_order(<span class="st">&quot;Modern Shag Rug&quot;</span>)</code></pre></d
 <p>Create a new file, <code>latte.py</code>, and type the two functions below into it, which will calculate the total amount for two drinks:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> latte_total():
   price <span class="op">=</span> <span class="fl">5.50</span>
-  sales_tax_rate <span class="op">=</span> .<span class="dv">10</span>
+  sales_tax_rate <span class="op">=</span> 0.<span class="dv">10</span>
   total_amount <span class="op">=</span> price <span class="op">+</span> (price <span class="op">*</span> sales_tax_rate)
   <span class="bu">print</span>(<span class="st">&quot;The total is $&quot;</span>, total_amount)
 
@@ -425,7 +425,7 @@ latte_total()
 
 <span class="kw">def</span> americano_total():
   price <span class="op">=</span> <span class="fl">4.75</span>
-  sales_tax_rate <span class="op">=</span> .<span class="dv">10</span>
+  sales_tax_rate <span class="op">=</span> 0.<span class="dv">10</span>
   total_amount <span class="op">=</span> price <span class="op">+</span> (price <span class="op">*</span> sales_tax_rate)
   <span class="bu">print</span>(<span class="st">&quot;The total is $&quot;</span>, total_amount)
 
@@ -468,7 +468,7 @@ calculate_total(<span class="fl">4.75</span>) <span class="co"># This was the Am
 <p>How did it go?</p>
 <p>Is this close to yours?</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> calculate_total(price):
-  sales_tax_rate <span class="op">=</span> .<span class="dv">10</span>
+  sales_tax_rate <span class="op">=</span> 0.<span class="dv">10</span>
   total_amount <span class="op">=</span> price <span class="op">+</span> (price <span class="op">*</span> sales_tax_rate)
   <span class="bu">print</span>(<span class="st">&quot;The total is $&quot;</span>, total_amount)
 
@@ -490,8 +490,8 @@ calculate_total(<span class="fl">4.75</span>) <span class="co"># This will print
   total_amount <span class="op">=</span> price <span class="op">+</span> (price <span class="op">*</span> taxes)
   <span class="bu">print</span>(<span class="st">&quot;The total is $&quot;</span>, total_amount)
 
-calculate_total(<span class="fl">5.5</span>, .<span class="dv">10</span>) <span class="co"># &quot;price&quot; is 5.5; &quot;taxes&quot; is .10. This will print 6.05.</span>
-calculate_total(<span class="fl">4.75</span>, .<span class="dv">12</span>) <span class="co"># &quot;price&quot; is 4.75; &quot;taxes&quot; is .12. This will print 5.32.</span></code></pre></div>
+calculate_total(<span class="fl">5.5</span>, 0.<span class="dv">10</span>) <span class="co"># &quot;price&quot; is 5.5; &quot;taxes&quot; is .10. This will print 6.05.</span>
+calculate_total(<span class="fl">4.75</span>, 0.<span class="dv">12</span>) <span class="co"># &quot;price&quot; is 4.75; &quot;taxes&quot; is .12. This will print 5.32.</span></code></pre></div>
 <p><strong>Protip:</strong> Use a comma-separated list — (parameter1, parameter2, parameter3, parameter4)</p>
 <aside class="notes">
 <p><strong>Teaching Tips</strong>:</p>
@@ -633,8 +633,8 @@ latte_total <span class="op">=</span> calculate_total(<span class="fl">5.5</span
 <li>Define a function, <code>add_two</code>, that takes a parameter <code>number</code>.</li>
 <li>It adds <code>2</code> to <code>number</code>, saving that in a new variable, <code>total</code>; print <code>total</code> out. Then, return <code>total</code>.</li>
 </ul>
-<iframe height="400px" width="100%" src="https://repl.it/@SuperTernary/Empty-Replit?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
-</iframe>
+<!--iframe height="400px" width="100%" src="https://repl.it/@SuperTernary/Empty-Replit?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
+</iframe-->
 <aside class="notes">
 <p><strong>Teaching Tips</strong>:</p>
 <ul>
