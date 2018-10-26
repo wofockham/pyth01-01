@@ -343,7 +343,7 @@ my_iphone.call(<span class="dv">515</span>) <span class="co"># Call a method fro
 <p><strong>Now up: Overwriting Attributes!</strong></p>
 <p>Let's switch to a new example. You don't need to follow along.</p>
 <p>Here's a regular Building class:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Building(<span class="bu">object</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Building():
  <span class="co"># Class variables</span>
  avg_sqft <span class="op">=</span> <span class="dv">12500</span>
  avg_bedrooms <span class="op">=</span> <span class="dv">3</span>
@@ -466,7 +466,7 @@ mans.get_avg_price()
 <section id="quick-review" class="level2">
 <h2>Quick Review</h2>
 <p>When we make child classes, we can overwrite class variables and methods.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Building(<span class="bu">object</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Building():
    <span class="co"># Class variables</span>
    avg_sqft <span class="op">=</span> <span class="dv">12500</span>
    avg_bedrooms <span class="op">=</span> <span class="dv">3</span>
@@ -494,7 +494,7 @@ mans.get_avg_price()
 <section id="knowledge-check" class="level2">
 <h2>Knowledge Check</h2>
 <p>Consider the following classes:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Animal(<span class="bu">object</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Animal():
    <span class="kw">def</span> is_mammal(<span class="va">self</span>):
       <span class="cf">return</span> <span class="va">True</span>
    <span class="kw">def</span> is_alive(<span class="va">self</span>):
