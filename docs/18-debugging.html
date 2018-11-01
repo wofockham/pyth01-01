@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-<title></title>
+<title>Debugging</title>
 
 <meta name="description" content="">
 
@@ -218,7 +218,13 @@ my_nums <span class="op">=</span> <span class="dv">5</span>
 <section id="keyerror" class="level2">
 <h2>KeyError</h2>
 <p>Accessing a key in a dictionary that doesn't exist.</p>
-<p>Commonly caused by: - A misspelling. - Mixing uppercase and lowercase.</p>
+<p>Commonly caused by:
+  <ul>
+    <li>A misspelling</li>
+    <li>US vs Commonwealth spelling</li>
+    <li>Mixing uppercase and lowercase</li>
+  </ul>
+</p>
 <p>The error message tells you exactly what key is missing!</p>
 <iframe height="400px" width="100%" src="https://repl.it/@SuperTernary/python-programming-error-key?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
 </iframe>
@@ -317,7 +323,7 @@ my_dog.run() <span class="co"># AttributeError!</span></code></pre></div>
 <span class="bu">print</span>(my_num)
 <span class="co"># TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</span></code></pre></div>
 <p>What do we learn from this error message? Have you learned a way to fix this?</p>
-<p><strong>Fun Fact</strong>: Some languages, like JavaScript, let this code run (breaking something!).</p>
+<p><strong>Fun Fact</strong>: Some languages, like JavaScript, let this code run (often breaking everything!).</p>
 <aside class="notes">
 <p>Talking points:</p>
 <ul>
@@ -787,10 +793,10 @@ test_phone.text(<span class="bu">int</span>(<span class="st">&quot;text 141&quot
 
   // available themes are in /css/theme
       theme: Reveal.getQueryHash().theme || 'default',
-  
+
   // default/cube/page/concave/zoom/linear/fade/none
       transition: Reveal.getQueryHash().transition || 'slide',
-  
+
   // Optional libraries used to extend on reveal.js
   dependencies: [
     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },

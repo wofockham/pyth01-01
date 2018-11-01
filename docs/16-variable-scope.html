@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-<title></title>
+<title>Variable Scope</title>
 
 <meta name="description" content="">
 
@@ -267,10 +267,10 @@ foo <span class="op">=</span> <span class="dv">7</span>
 
 <span class="co"># Delete your other code</span>
 <span class="co"># Add this function and print calls instead</span>
-<span class="kw">def</span> coolFunc():
+<span class="kw">def</span> cool_func():
   bar <span class="op">=</span> <span class="dv">8</span>
 
-coolFunc()
+cool_func()
 <span class="bu">print</span>(foo)
 <span class="bu">print</span>(bar)</code></pre></div>
 <p>It fails!</p>
@@ -278,8 +278,8 @@ coolFunc()
 <p><strong>Talking Points</strong>:</p>
 <ul>
 <li>&quot;If you run this code, you will get an error: NameError: name 'bar' is not defined.&quot;</li>
-<li>&quot;The variable bar is only accessible from inside the coolFunc function.</li>
-<li>We called the coolFunc function, but as soon as it finished running, the variable bar ceased to exist. Even while the function was running, it was only accessible to itself. But, foo in the global scope was still accessible.&quot;</li>
+<li>&quot;The variable bar is only accessible from inside the cool_func function.</li>
+<li>We called the cool_func function, but as soon as it finished running, the variable bar ceased to exist. Even while the function was running, it was only accessible to itself. But, foo in the global scope was still accessible.&quot;</li>
 </ul>
 </aside>
 <hr />
@@ -288,12 +288,12 @@ coolFunc()
 <h2>Scope Can Be Tricky</h2>
 <p>What do you think happened here?</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">foo <span class="op">=</span> <span class="dv">5</span>
-<span class="kw">def</span> incrementFoo():
+<span class="kw">def</span> increment_foo():
   foo <span class="op">=</span> <span class="dv">6</span>
   <span class="bu">print</span>(foo) <span class="co"># prints 6</span>
 
 <span class="bu">print</span>(foo) <span class="co"># prints 5</span>
-incrementFoo()
+increment_foo()
 <span class="bu">print</span>(foo) <span class="co"># prints 5</span></code></pre></div>
 <aside class="notes">
 <p><strong>Teaching Tips</strong>:</p>
@@ -317,12 +317,12 @@ incrementFoo()
 <h2>I Do: The Global Keyword</h2>
 <p>You can call a global variable intentionally with <code>global</code>. * What do you think happens if you forget the <code>global</code> keyword?</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">foo <span class="op">=</span> <span class="dv">5</span>
-<span class="kw">def</span> incrementFoo():
+<span class="kw">def</span> increment_foo():
   <span class="kw">global</span> foo
   foo <span class="op">+=</span> <span class="dv">1</span>
 
 <span class="bu">print</span>(foo) <span class="co"># prints 5</span>
-incrementFoo()
+increment_foo()
 <span class="bu">print</span>(foo) <span class="co"># prints 6!</span></code></pre></div>
 <aside class="notes">
 <p><strong>Talking Points</strong>:</p>
@@ -447,10 +447,10 @@ jump_in_river()</code></pre></div>
 
   // available themes are in /css/theme
       theme: Reveal.getQueryHash().theme || 'default',
-  
+
   // default/cube/page/concave/zoom/linear/fade/none
       transition: Reveal.getQueryHash().transition || 'slide',
-  
+
   // Optional libraries used to extend on reveal.js
   dependencies: [
     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },

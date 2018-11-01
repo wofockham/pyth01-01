@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-<title></title>
+<title>Scripting</title>
 
 <meta name="description" content="">
 
@@ -236,10 +236,11 @@ All Python files you write are scripts! But when people say scripts, that's not 
 <p>Let's further our programming toolkit.</p>
 <p>On your computer, you can:</p>
 <ul>
-<li>Create or open a file (text, jpg, Word doc...).</li>
+<li>Create or open a file (text, JPG, Word doc, etc.).</li>
 <li>Read it.</li>
 <li>Edit it.</li>
 <li>Close it.</li>
+<li>Delete it.</li>
 </ul>
 <p>These are pretty basic actions. Can we do it in Python?</p>
 <aside class="notes">
@@ -361,7 +362,6 @@ my_file.close()</code></pre></div>
 <li>Write opens a file for writing...</li>
 <li>But it also creates it if need be!</li>
 </ul>
-<p>At the bottom of your script, add:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Open OR create file totally_new_file.txt</span>
 my_new_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;totally_new_file.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)
 
@@ -386,8 +386,8 @@ my_new_file.close()</code></pre></div>
 <ul>
 <li><code>Open</code> for <code>read</code> mode your existing <code>a_file.txt</code>.</li>
 <li><code>Read()</code> the file and save the contents into a variable, <code>file_contents</code>.</li>
-<li>Under that, using <code>write</code>, create a file called <code>my_file_script.py</code>.</li>
-<li>In <code>my_file_script.py</code>, write what you read from <code>a_file.txt</code>.</li>
+<li>Under that, using <code>write</code>, create a file called <code>my_file_output.txt</code>.</li>
+<li>In <code>my_file_output.txt</code>, write what you read from <code>a_file.txt</code>.</li>
 </ul>
 <p>Don't forget to <code>close()</code> your files!</p>
 <aside class="notes">
@@ -397,7 +397,7 @@ my_new_file.close()</code></pre></div>
 <li>After they do this, show it to them. Show them opening multiple files at the top, too, so they know you don't have to go sequentially: e.g.</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">file_to_read <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;a_file.txt&quot;</span>)
-file_to_write <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;my_file_script.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)
+file_to_write <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;my_file_output.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)
 
 
 string_to_write <span class="op">=</span> file_to_read.read()
@@ -653,10 +653,10 @@ Here's a repl.it, if you'd like: https://repl.it/<span class="citation" data-cit
 
   // available themes are in /css/theme
       theme: Reveal.getQueryHash().theme || 'default',
-  
+
   // default/cube/page/concave/zoom/linear/fade/none
       transition: Reveal.getQueryHash().transition || 'slide',
-  
+
   // Optional libraries used to extend on reveal.js
   dependencies: [
     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
