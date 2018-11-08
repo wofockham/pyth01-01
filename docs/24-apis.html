@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-<title></title>
+<title>Introduction to APIs</title>
 
 <meta name="description" content="">
 
@@ -137,7 +137,7 @@ Here, address any remaining questions in the parking lot.
 <h2>APIs (Application Program Interfaces)</h2>
 <p>An API is a service that provides raw data for public use.</p>
 <p>APIs give us data, maps, anything!</p>
-<table style="width:28%;">
+<table>
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 18%" />
@@ -338,7 +338,7 @@ response_data <span class="op">=</span> response.json()
 </section>
 <section id="you-do-calling-an-api" class="level2">
 <h2>You Do: Calling an API</h2>
-<p>Open a new file, <code>my_api.py</code>. Type and run the code:</p>
+<p>Open a new file, <code>api-practice.py</code>. Type and run the code:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> requests
 
 <span class="co"># Call the API by opening the url and reading the data.</span>
@@ -423,8 +423,8 @@ response_data <span class="op">=</span> response.json()
 <p>Back in your file, change the API call back to <code>http://api.open-notify.org/astros.json</code>.</p>
 <p>Once it's decoded, it's a dictionary!</p>
 <p>Replace your <code>print</code> statement:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> key, ratings <span class="kw">in</span> response_data_decoded.items():
-    <span class="bu">print</span>(<span class="st">&quot;Key:&quot;</span>, key, <span class="st">&quot;Value:&quot;</span>, ratings, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> key, value <span class="kw">in</span> response_data.items():
+    <span class="bu">print</span>(<span class="st">&quot;Key:&quot;</span>, key, <span class="st">&quot;Value:&quot;</span>, value, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</code></pre></div>
 <p>Can we go further? Try to only print the <code>name</code>s of the astronauts.</p>
 <aside class="notes">
 <p>5 min</p>
@@ -448,7 +448,7 @@ response_data <span class="op">=</span> response.json()
 For people the value is [{&#39;craft&#39;: &#39;ISS&#39;, &#39;name&#39;: &#39;Oleg Artemyev&#39;}, {&#39;craft&#39;: &#39;ISS&#39;, &#39;name&#39;: &#39;Andrew Feustel&#39;}, .....]
 
 For number the value is 6</code></pre>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> item <span class="kw">in</span> response_data_decoded[<span class="st">&quot;people&quot;</span>]:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> item <span class="kw">in</span> response_data[<span class="st">&quot;people&quot;</span>]:
     <span class="bu">print</span>(item[<span class="st">&quot;name&quot;</span>])</code></pre></div>
 <aside class="notes">
 <p>Teaching tip:</p>
@@ -637,10 +637,10 @@ response_data <span class="op">=</span> response.json()
 
   // available themes are in /css/theme
       theme: Reveal.getQueryHash().theme || 'default',
-  
+
   // default/cube/page/concave/zoom/linear/fade/none
       transition: Reveal.getQueryHash().transition || 'slide',
-  
+
   // Optional libraries used to extend on reveal.js
   dependencies: [
     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
