@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-<title></title>
+<title>Intro to Flask</title>
 
 <meta name="description" content="">
 
@@ -160,18 +160,13 @@ Materials needed:
 <p>How?</p>
 <p>We just make a normal Python app.</p>
 <p>It looks like:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#import Flask class from flask library (Note upper/lowercase convention)</span>
-<span class="im">from</span> flask <span class="im">import</span> Flask
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> flask <span class="im">import</span> Flask
 
 <span class="co"># Initialize an instance of the Flask class</span>
-<span class="co"># This starts the website!</span>
 app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 
-<span class="co"># The default URL ends in / (&quot;my-website.com/&quot;)</span>
-<span class="co"># Could be instead &quot;my-website.com/about&quot; or anything - more on this later)</span>
+<span class="co"># Define a path: "/" is the "root"</span>
 <span class="at">@app.route</span>(<span class="st">&#39;/&#39;</span>)
-
-<span class="co"># Function that returns the page: Display &quot;Hello, World!&quot;</span>
 <span class="kw">def</span> index():
   <span class="cf">return</span> <span class="st">&#39;Hello, World!&#39;</span>
 
@@ -203,9 +198,9 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 <li>We need to install Flask!</li>
 <li><code>pip install flask</code></li>
 </ul>
-<p>Create a file called <code>my_website.py</code>.</p>
+<p>Create a file called <code>my_first_web_server.py</code>.</p>
 <p>Start with:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#import Flask class from flask library</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># import Flask class from flask library</span>
 <span class="im">from</span> flask <span class="im">import</span> Flask</code></pre></div>
 <aside class="notes">
 <p><strong>Talking Points</strong>:</p>
@@ -220,14 +215,13 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 <section id="we-do-the-main-flask-app" class="level2">
 <h2>We Do: The Main Flask App</h2>
 <p>Let's add:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Initialize an instance of the Flask class</span>
-<span class="co"># This starts the website!</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> flask <span class="im">import</span> Flask
+
+<span class="co"># Initialize an instance of the Flask class</span>
 app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 
-<span class="co"># The default URL ends in / (&quot;my-website.com/&quot;)</span>
+<span class="co"># Define a path: "/" is the "root"</span>
 <span class="at">@app.route</span>(<span class="st">&#39;/&#39;</span>)
-
-<span class="co"># Function that returns the page: Display &quot;Hello, World!&quot;</span>
 <span class="kw">def</span> index():
   <span class="cf">return</span> <span class="st">&#39;Hello, World!&#39;</span>
 
@@ -245,7 +239,7 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 <section id="we-do-flask-app---try-it" class="level2">
 <h2>We Do: Flask App - Try it!</h2>
 <p>Run the app like normal:</p>
-<p><code>python my_website.py</code></p>
+<p><code>python my_first_web_server.py</code></p>
 <p>Go to:</p>
 <p><code>http://localhost:5000/</code></p>
 <p>You made a web app!</p>
@@ -318,7 +312,7 @@ guitar <span class="op">=</span> Flask(<span class="va">__name__</span>)
 <ul>
 <li>Before 2010:
 <ul>
-<li>No easy method for Python websites.</li>
+<li>No easy method for simple Python websites.</li>
 </ul></li>
 <li>2010:
 <ul>
@@ -360,16 +354,13 @@ guitar <span class="op">=</span> Flask(<span class="va">__name__</span>)
 <li>Developed in 2010</li>
 </ul>
 <p>Looks like this:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#import Flask class from flask library</span>
-<span class="im">from</span> flask <span class="im">import</span> Flask
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> flask <span class="im">import</span> Flask
 
 <span class="co"># Initialize an instance of the Flask class</span>
 app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 
-<span class="co"># The default URL ends in / (&quot;my-website.com/&quot;)</span>
+<span class="co"># Define a path: "/" is the "root"</span>
 <span class="at">@app.route</span>(<span class="st">&#39;/&#39;</span>)
-
-<span class="co"># Function that returns the page: Display &quot;Hello, World!&quot;</span>
 <span class="kw">def</span> index():
   <span class="cf">return</span> <span class="st">&#39;Hello, World!&#39;</span>
 
@@ -412,10 +403,10 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 
   // available themes are in /css/theme
       theme: Reveal.getQueryHash().theme || 'default',
-  
+
   // default/cube/page/concave/zoom/linear/fade/none
       transition: Reveal.getQueryHash().transition || 'slide',
-  
+
   // Optional libraries used to extend on reveal.js
   dependencies: [
     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
