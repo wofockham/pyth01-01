@@ -985,7 +985,6 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 
 <span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
     app.run(debug<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<p>Flask automatically makes the page structure for us - the <code>html</code>, <code>head</code>, <code>body</code>, <code>doctype</code>, etc.</p>
 <p><strong>Discussion</strong>: Where does that &quot;return&quot; go? Where could we put our HTML?</p>
 <aside class="notes">
 <p><strong>Teaching Tips</strong>:</p>
@@ -1039,7 +1038,8 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 </aside>
 <hr />
 </section>
-<section id="quick-recap-2" class="level2">
+<!-- this is just bullshit -->
+<!--section id="quick-recap-2" class="level2">
 <h2>Quick Recap:</h2>
 <p>Flask automatically makes a basic webpage for us. The HTML looks like this:</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
@@ -1060,7 +1060,7 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 </ul>
 </aside>
 <hr />
-</section>
+</section-->
 <section id="we-do-external-html-file" class="level2">
 <h2>We Do: External HTML File</h2>
 <p>Create a folder called <code>templates</code>.</p>
@@ -1130,7 +1130,6 @@ app <span class="op">=</span> Flask(<span class="va">__name__</span>)
 </section>
 <section id="quick-recap-3" class="level2">
 <h2>Quick Recap:</h2>
-<p>Flask automatically generates the webpage HTML and puts your HTML in the <code>body</code> tag - whatever you put in your <code>return</code> statement.</p>
 <p>If your HTML gets to be too long to put in just a function without being confusing, you can make the HTML file yourself and tell Flask to load that!</p>
 <aside class="notes">
 <p><strong>Teaching Tips</strong>:</p>
