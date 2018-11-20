@@ -224,7 +224,7 @@ creator: Kevin Coyle
 <a class="sourceLine" id="cb3-5" data-line-number="5">...</a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="at">@app.route</span>(<span class="st">&#39;/dice/&lt;sides&gt;&#39;</span>)</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="kw">def</span> newDice(sides):</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="kw">def</span> sided_dice(sides):</a>
 <a class="sourceLine" id="cb3-9" data-line-number="9">  my_greeting <span class="op">=</span> <span class="st">&quot;You rolled a &quot;</span> <span class="op">+</span> <span class="bu">str</span>(random.randint(1, sides))</a>
 <a class="sourceLine" id="cb3-10" data-line-number="10">  <span class="cf">return</span> render_template(<span class="st">&quot;index.html&quot;</span>, greeting<span class="op">=</span>my_greeting)</a></code></pre></div>
 <hr />
