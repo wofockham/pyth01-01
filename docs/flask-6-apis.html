@@ -428,16 +428,16 @@
   <li>We can use the same route — with a different method.</li>
   </ul>
   <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="at">@app.route</span>(<span class="st">&#39;/heroes&#39;</span>, methods<span class="op">=</span>[<span class="st">&#39;POST&#39;</span>])</a>
-  <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">def</span> addMyHero():</a>
-  <a class="sourceLine" id="cb9-3" data-line-number="3">    newhero <span class="op">=</span> {<span class="st">&quot;person&quot;</span>: request.get_json()[<span class="st">&quot;person&quot;</span>]}</a>
+  <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">def</span> add_hero():</a>
+  <a class="sourceLine" id="cb9-3" data-line-number="3">    new_hero <span class="op">=</span> {<span class="st">&quot;person&quot;</span>: request.form[<span class="st">&quot;person&quot;</span>]}</a>
   <a class="sourceLine" id="cb9-4" data-line-number="4"></a>
-  <a class="sourceLine" id="cb9-5" data-line-number="5">    heroes.append(newhero)</a>
+  <a class="sourceLine" id="cb9-5" data-line-number="5">    heroes.append(new_hero)</a>
   <a class="sourceLine" id="cb9-6" data-line-number="6">    <span class="cf">return</span> jsonify({<span class="st">&quot;heroes&quot;</span>: heroes})</a></code></pre></div>
   <aside class="notes">
   <p><strong>Talking Points:</strong></p>
   <ul>
   <li>“We’ll use the same route, and if a <code>POST</code> request gets made, we’ll append that into our heroes list.”</li>
-  <li>“Add in the following function that I’ve named <code>addMyHero</code>.”</li>
+  <li>“Add in the following function that I’ve named <code>add_hero</code>.”</li>
   </ul>
   </aside>
   <hr />
@@ -457,15 +457,14 @@
   <h2>Profit</h2>
   <p>Now we’ll check to see if our <code>POST</code> request works.</p>
   <ul>
-  <li>Open a new terminal window, and <code>python hello_api.py</code>.
+  <li>Open a new terminal window, and start the server.</li>
+  <li>Going to <code>/api</code> gives us the heroes list.</li>
+  </ul>
+  <h2>How do we <code>POST</code>?</h2>
   <ul>
-  <li>Launch the app!</li>
-  </ul></li>
-  <li>Going to <code>/heroes</code> gives us the heroes list.</li>
-  <li><p>How do we <code>POST</code>?</p></li>
-  <li>We’ll use <code>curl</code>:
+  <li>We’ll use a second Python program:
   <ul>
-  <li>A command line tool for getting or sending files with URL syntax.</li>
+  <li>The <code>requests</code> library can make <code>POST</code> requests</li>
   <li>Not necessary to memorize!</li>
   </ul></li>
   </ul>
@@ -474,9 +473,9 @@
   <ul>
   <li>Now we’ll check to see if our <code>POST</code> request works.
   <ol type="1">
-  <li>Open a new terminal window, and <code>python hello_api.py</code>.</li>
+  <li>Open a new terminal window</li>
   </ol></li>
-  <li>This will launch our server.
+  <li>Launch our server.
   <ol start="2" type="1">
   <li>Once your Flask app has started, open a new tab using <code>Command + T</code>. We need the server to remain running locally.</li>
   <li>In the new tab, we’re going to make a <code>POST</code> request with a particular content type of JSON.</li>
@@ -498,12 +497,17 @@
   <hr />
   </section>
   <section id="trying-out-post-and-curl" class="level2">
-  <h2>Trying Out <code>POST</code> and <code>cURL</code></h2>
+  <h2>Trying Out <code>POST</code></h2>
   <ul>
-  <li><p>With the app running, open a new tab in the command prompt.</p></li>
-  <li><p>Replace the name, then copy this right over:</p></li>
+  <li><p>With the app running, create and run a new program: <code>hero_adder.py</code>.</p></li>
   </ul>
-  <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;person&quot;:&quot;&lt;&lt;INSERT A NAME HERE&gt;&gt;&quot;}&#39;</span> http://localhost:5000/heroes</a></code></pre></div>
+  <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode python">import requests
+import json
+
+response = requests.post('http://localhost:5000/api/heroes',
+                         data={"person": "Mikaela Squirchuk"})
+print(response.text)
+</code></pre></div>
   <ul>
   <li><p>Check the command line output!</p></li>
   <li><p>Try going to <code>http://localhost:5000/heroes</code> — your hero is listed!</p></li>
