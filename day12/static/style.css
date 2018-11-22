@@ -1,0 +1,16 @@
+/* Try changing the colors in your CSS file.
+Use text-align to center the content.
+Use text-decoration to underline the h1
+Use other HTML tags! Can you make a hyperlink using <a href="<url>">Click here </a>?
+Can you add a list? <ul><li></li></ul> */
+
+body{
+  background: lime;
+  font-family: "Times New Roman", serif;
+  text-align: center;
+}
+
+h1 {
+  color: #012345;
+  text-decoration: overline;
+}
